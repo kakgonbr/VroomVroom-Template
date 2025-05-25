@@ -7,7 +7,7 @@ namespace VroomVroom.Test
         [Fact]
         public void Test1()
         {
-            VroomVroom.Server.Program.doSomething().Should().BeFalse();
+            VroomVroom.Server.Program.doSomething().Should().BeTrue();
         }
     }
 }
