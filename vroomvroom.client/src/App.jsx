@@ -21,11 +21,11 @@ function App() {
             </thead>
             <tbody>
                 {forecasts.map(forecast =>
-                    <tr key={forecast.date}>
-                        <td>{forecast.date}</td>
-                        <td>{forecast.temperatureC}</td>
-                        <td>{forecast.temperatureF}</td>
-                        <td>{forecast.summary}</td>
+                    <tr key={forecast.userId}>
+                        <td>{forecast.email}</td>
+                        <td>{forecast.phoneNumber}</td>
+                        <td>{forecast.role}</td>
+                        <td>{forecast.creationDate}</td>
                     </tr>
                 )}
             </tbody>
