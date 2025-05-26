@@ -1,4 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
+using VroomVroom.Server.Data;
+
 namespace VroomVroom.Server
 {
     public class Program
@@ -14,6 +17,8 @@ namespace VroomVroom.Server
 
             // Add services to the container.
 
+            builder.Services.AddDbContext<RentalContext>(options =>
+                options.UseSqlServer(Environment.GetEnvironmentVariable("DATABASE_CONNECTION")));
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
