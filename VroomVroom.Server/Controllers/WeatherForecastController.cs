@@ -25,6 +25,8 @@ namespace VroomVroom.Server.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<User> Get()
         {
+            _logger.LogInformation("WeatherForecastController received a get.");
+
             return _context.Users.ToArray();
 
             //return Enumerable.Range(1, 5).Select(index => new WeatherForecast

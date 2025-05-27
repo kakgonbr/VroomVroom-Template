@@ -16,7 +16,8 @@ namespace VroomVroom.Server
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
+            builder.Logging.ClearProviders();
+            builder.Logging.AddConsole();
             builder.Services.AddDbContext<RentalContext>(options =>
                 options.UseSqlServer(Environment.GetEnvironmentVariable("DATABASE_CONNECTION")));
             builder.Services.AddControllers();
